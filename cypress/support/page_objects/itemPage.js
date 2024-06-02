@@ -5,10 +5,10 @@ const BUY_BUTTON = '.action--stickyWrap--ZKtL0mk > .comet-v2-btn > span';
 
 class ItemPage extends BasePage {
 
-checkItemAvailable()  {
-    cy.get(SECOND_ITEM).click();
-    this.clickElement(BUY_BUTTON);
- }
+    checkItemAvailable()  {
+        cy.get(SECOND_ITEM).click();
+        this.clickElement(BUY_BUTTON);
+    }
 }
 
 export default ItemPage
