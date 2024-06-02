@@ -27,6 +27,9 @@
 let url = "https://www.aliexpress.com";
 
 Cypress.Commands.add('enterAliExpress', () => {
+    cy.window().then(window => {
+        window.localStorage.clear();
+    });
     cy.clearCookies();
     Cypress.on('uncaught:exception', (err) => {
         if (err.message.includes('ResizeObserver loop completed with undelivered notifications')) {

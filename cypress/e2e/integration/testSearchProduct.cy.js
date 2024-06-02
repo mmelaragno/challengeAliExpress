@@ -10,13 +10,13 @@ describe('AliExpress', () => {
 
     before(() => {
         cy.enterAliExpress();
+        cy.acceptPromps()
     });
 
     it('Search for "instax mini" and check the second item on the second page', () => {
         const product = "instax mini"
         const page = "2"
 
-        cy.acceptPromps();
         homePage.searchProduct(product)
         homePage.searchSubmit();
         homePage.navigateToPage(page);
