@@ -14,3 +14,6 @@
 
 # JetBrains IDE
 .idea/
+/cypress/report/
+/cypress/videos
+.idea
