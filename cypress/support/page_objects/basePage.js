@@ -1,21 +1,20 @@
 class BasePage {
-
-    clickElement(locator)  {
-        let element = cy.get(locator).should('exist');
-        element.click();
+    clickElement(locator, errorMessage) {
+        cy.get(locator).should('exist', errorMessage).click();
     }
 
-    typeText(locator, text)  {
-        cy.get(locator).clear().type(text);
-    }
-    assertElementExists(locator){
-        cy.get(locator, { timeout: 50000 }).should('exist');
+    typeText(locator, text, errorMessage) {
+        cy.get(locator).should('exist', errorMessage).clear().type(text);
     }
 
-    assertButtons(locator)  {
-        cy.get(locator, { timeout: 50000 }).should('exist').and('be.visible').and('be.enabled');
+    assertElementExists(locator, errorMessage) {
+        cy.get(locator, { timeout: 50000 }).should('exist', errorMessage);
     }
 
+    assertButtons(locator, errorMessage) {
+        cy.get(locator, { timeout: 50000 }).should('exist', errorMessage)
+            .and('be.visible', errorMessage).and('be.enabled', errorMessage);
+    }
 }
 
-export default BasePage
+export default BasePage;

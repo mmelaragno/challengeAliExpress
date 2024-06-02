@@ -7,7 +7,7 @@ class ItemPage extends BasePage {
 
     checkItemAvailable()  {
         cy.get(SECOND_ITEM).click();
-        this.clickElement(BUY_BUTTON);
+        this.clickElement(BUY_BUTTON, 'Unable to click button');
     }
 }
 
